@@ -1,0 +1,51 @@
+@extends('layouts.scaffold')
+
+@section('main')
+
+
+<div class="row">
+ 
+
+<div class="offset4 span4">
+
+
+
+  <div class="box gray-box confide">
+    @if ( Session::get('error') )
+        <div class="alert alert-error">{{{ Session::get('error') }}}</div>
+    @endif
+
+    @if ( Session::get('notice') )
+        <div class="alert">{{{ Session::get('notice') }}}</div>
+    @endif
+
+   <legend>
+    Reset Password
+  </legend>
+
+
+<fieldset>
+<form method="POST" action="{{{ (Confide::checkAction('UserController@do_reset_password'))    ?: URL::to('/user/reset') }}}" accept-charset="UTF-8">
+
+    <input type="hidden" name="token" value="{{{ $token }}}">
+    <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
+
+    <label for="password">{{{ Lang::get('confide::confide.password') }}}</label>
+    <input placeholder="{{{ Lang::get('confide::confide.password') }}}" type="password" name="password" id="password">
+
+    <label for="password_confirmation">{{{ Lang::get('confide::confide.password_confirmation') }}}</label>
+    <input placeholder="{{{ Lang::get('confide::confide.password_confirmation') }}}" type="password" name="password_confirmation" id="password_confirmation">
+
+
+
+    <div class="form-actions">
+        <button type="submit" class="pull-right btn btn-primary">{{{ Lang::get('confide::confide.forgot.submit') }}}</button>
+    </div>
+    
+</form>
+</fieldset>
+</div>
+</div>
+</div>
+
+@stop

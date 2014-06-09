@@ -1,0 +1,10 @@
+php artisan generate:scaffold studentregistration --fields="studentName:string, studentFathersName:string, studentDateOfBirth:string, studentCommunity:string, studentCommunicationAddressLine1:string, studentCommunicationAddressLine2:string, studentCommunicationCity:string, studentCommunicationState:string, studentCommunicationPinCode:string,studentPermanentAddressLine1:string, studentPermanentAddressLine2:string, studentPermanentCity:string, studentPermanentState:string, studentPermanentPinCode:string, studentEmail:string, studentPhone:string, studentCourseCategory_id:string, studentCourse_id:string, studentBatch_id:string, studentOptional_id:string, studentCourseFees:string, studentTotalFees:string, studentDiscount:string, studentDiscountDescription:string"
+
+php artisan generate:scaffold coursecategory --fields ="courseCategoryName:string, coursecategoryDescription:string"
+
+php artisan generate:scaffold coursemaster --fields ="courseCategory_id:string, courseName:string, courseDescription:string, courseFees:string"
+
+php artisan generate:scaffold coursebatch --fields ="batchName:string, batchDescription:string"
+
+php artisan generate:scaffold optionalsubject --fields ="optionalSubjectName:string, optionalSubjectDescription:string"
+
